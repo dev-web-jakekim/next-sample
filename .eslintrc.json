@@ -1,0 +1,83 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
+  "rules": {
+    "prettier/prettier": ["error", { "printWidth": 110 }],
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": ["jsx"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off", //react 변수 있어야 함 off
+    "react/button-has-type": "off", //button type 지정 off
+    "no-shadow": "off", 
+    "no-undef": "error", // Disallow the use of undeclared variables unless mentioned in /*global */ comments
+    "no-unused-expressions": "off", 
+    "comma-dangle": ["error", "always-multiline"],
+    "consistent-return": "error", // return type 명시
+    "no-multiple-empty-lines": "warn", // 연속된 공백 금지
+    "react/jsx-filename-extension": "off", // jsx file name 사용 금지 off
+    "import/prefer-default-export": "error", // 하나의 경우, default export 사용하도록 지정.
+    "import/no-extraneous-dependencies": "off", 
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ],
+
+    // TypeScript
+    "@typescript-eslint/no-shadow": ["error"], // 외부 변수이름에 대해 이름 겹침 에러
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        "allowDestructuring": true,
+        "allowedNames": ["self", "me", "scope", "parser"]
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "error", // empty function off
+    "@typescript-eslint/no-var-requires": "off",// require 사용시, import 같이 사용하도록 off
+    "@typescript-eslint/no-unused-vars": "error", // 미사용 변수 존재시 에러
+    "@typescript-eslint/no-non-null-assertion": "off", //  airbnb 설정 off
+    "@typescript-eslint/ban-ts-comment": "off",//  airbnb 설정 off
+    // React
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-pascal-case": "warn", // react component 이름 유형 pascal case로
+    "react/jsx-key": "error", // loop 요소 생성시, key 필수
+    "react/prop-types": "error", // react props type 지정 필수
+    "react/jsx-fragments": "error", // React Fragment 사용시, React Import 필수
+    "react/no-unused-state": "error", // 사용되지 않는 state
+    "react/self-closing-comp": "warn", // 셀프 클로징 태그 가능하면 적용
+    "react/jsx-curly-brace-presence": "warn", // jsx 내 불필요한 중괄호 금지
+    "import/extensions": "off", 
+    "import/no-unresolved": "off"
+  },
+  "globals": {
+    "React": "writable"
+  }
+}
